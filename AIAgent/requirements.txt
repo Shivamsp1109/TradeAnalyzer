@@ -1,0 +1,13 @@
+﻿fastapi
+uvicorn[standard]
+pandas
+numpy
+xgboost
+scikit-learn
+yfinance
+nsepy
+sqlalchemy
+psycopg2-binary
+python-dotenv
+pydantic
+alembic
