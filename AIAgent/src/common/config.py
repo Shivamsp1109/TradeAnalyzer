@@ -89,6 +89,19 @@ class BacktestConfig:
 
 
 @dataclass(frozen=True)
+class ModelConfig:
+    model_name: str
+    feature_set_version: str
+    artifacts_dir: str
+    random_state: int
+    n_estimators: int
+    learning_rate: float
+    max_depth: int
+    subsample: float
+    colsample_bytree: float
+
+
+@dataclass(frozen=True)
 class AppConfig:
     env: str
     api: ApiConfig
@@ -97,6 +110,7 @@ class AppConfig:
     decision: DecisionConfig
     training: TrainingConfig
     backtest: BacktestConfig
+    model: ModelConfig
 
 
 @lru_cache(maxsize=1)
@@ -145,5 +159,16 @@ def get_config() -> AppConfig:
             min_training_days=_get_env_int("MIN_TRAINING_DAYS", 252),
             benchmark_symbol=_get_env_str("BENCHMARK_SYMBOL", "^NSEI"),
             risk_free_rate_annual=_get_env_float("RISK_FREE_RATE_ANNUAL", 0.07),
+        ),
+        model=ModelConfig(
+            model_name=_get_env_str("MODEL_NAME", "xgboost_multihorizon"),
+            feature_set_version=_get_env_str("FEATURE_SET_VERSION", "v1"),
+            artifacts_dir=_get_env_str("MODEL_ARTIFACTS_DIR", "artifacts/models"),
+            random_state=_get_env_int("MODEL_RANDOM_STATE", 42),
+            n_estimators=_get_env_int("MODEL_N_ESTIMATORS", 400),
+            learning_rate=_get_env_float("MODEL_LEARNING_RATE", 0.03),
+            max_depth=_get_env_int("MODEL_MAX_DEPTH", 4),
+            subsample=_get_env_float("MODEL_SUBSAMPLE", 0.9),
+            colsample_bytree=_get_env_float("MODEL_COLSAMPLE_BYTREE", 0.8),
         ),
     )
