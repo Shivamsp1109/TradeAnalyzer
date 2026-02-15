@@ -1,4 +1,4 @@
-﻿# Indian Market Stock Recommendation System
+# Indian Market Stock Recommendation System
 
 This repository contains a phased build for an end-of-day (EOD) stock recommendation platform for Indian markets.
 

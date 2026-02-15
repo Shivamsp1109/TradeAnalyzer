@@ -1,4 +1,4 @@
-﻿# Implementation Plan
+# Implementation Plan
 
 ## Step 1 (Current)
 - Finalize architecture and Phase 1 scope

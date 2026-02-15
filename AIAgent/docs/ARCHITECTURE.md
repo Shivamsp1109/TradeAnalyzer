@@ -1,4 +1,4 @@
-﻿# System Architecture
+# System Architecture
 
 ## High-Level Flow
 1. Java Frontend sends request for stock recommendation.

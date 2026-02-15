@@ -1,4 +1,4 @@
-﻿# Phase 1 Technical Specification (EOD Only)
+# Phase 1 Technical Specification (EOD Only)
 
 ## 1) Scope
 Phase 1 delivers only end-of-day predictions and recommendation API for Indian stocks.
