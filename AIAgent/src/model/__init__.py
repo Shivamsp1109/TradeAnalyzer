@@ -1,5 +1,9 @@
 from src.model.contracts import InferenceResult, ModelArtifacts, PredictionBatch, TrainingResult
-from src.model.trainer import XGBoostPredictionEngine, XGBoostTrainingService
+try:
+    from src.model.trainer import XGBoostPredictionEngine, XGBoostTrainingService
+except ModuleNotFoundError:  # Allows partial usage where ML dependencies are unavailable.
+    XGBoostPredictionEngine = None
+    XGBoostTrainingService = None
 
 try:
     from src.model.registry import deactivate_previous_versions, register_model_version
