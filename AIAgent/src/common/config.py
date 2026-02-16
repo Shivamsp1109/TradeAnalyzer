@@ -93,6 +93,7 @@ class ModelConfig:
     model_name: str
     feature_set_version: str
     artifacts_dir: str
+    default_model_version: str
     random_state: int
     n_estimators: int
     learning_rate: float
@@ -164,6 +165,7 @@ def get_config() -> AppConfig:
             model_name=_get_env_str("MODEL_NAME", "xgboost_multihorizon"),
             feature_set_version=_get_env_str("FEATURE_SET_VERSION", "v1"),
             artifacts_dir=_get_env_str("MODEL_ARTIFACTS_DIR", "artifacts/models"),
+            default_model_version=_get_env_str("MODEL_DEFAULT_VERSION", ""),
             random_state=_get_env_int("MODEL_RANDOM_STATE", 42),
             n_estimators=_get_env_int("MODEL_N_ESTIMATORS", 400),
             learning_rate=_get_env_float("MODEL_LEARNING_RATE", 0.03),
